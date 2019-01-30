@@ -9,7 +9,7 @@ class Student
     new_student 
   end
 
-  def self.all
+  def all
     sql = <<-SQL
       SELECT * FROM students
     SQL
@@ -32,7 +32,6 @@ class Student
       INSERT INTO students (name, grade) 
       VALUES (?, ?)
     SQL
-
     DB[:conn].execute(sql, self.name, self.grade)
   end
   
